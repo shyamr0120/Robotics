@@ -1,0 +1,628 @@
+%% bare_conf.tex
+%% V1.4b
+%% 2015/08/26
+%% by Michael Shell
+%% See:
+%% http://www.michaelshell.org/
+%% for current contact information.
+%%
+%% This is a skeleton file demonstrating the use of IEEEtran.cls
+%% (requires IEEEtran.cls version 1.8b or later) with an IEEE
+%% conference paper.
+%%
+%% Support sites:
+%% http://www.michaelshell.org/tex/ieeetran/
+%% http://www.ctan.org/pkg/ieeetran
+%% and
+%% http://www.ieee.org/
+
+%%*************************************************************************
+%% Legal Notice:
+%% This code is offered as-is without any warranty either expressed or
+%% implied; without even the implied warranty of MERCHANTABILITY or
+%% FITNESS FOR A PARTICULAR PURPOSE! 
+%% User assumes all risk.
+%% In no event shall the IEEE or any contributor to this code be liable for
+%% any damages or losses, including, but not limited to, incidental,
+%% consequential, or any other damages, resulting from the use or misuse
+%% of any information contained here.
+%%
+%% All comments are the opinions of their respective authors and are not
+%% necessarily endorsed by the IEEE.
+%%
+%% This work is distributed under the LaTeX Project Public License (LPPL)
+%% ( http://www.latex-project.org/ ) version 1.3, and may be freely used,
+%% distributed and modified. A copy of the LPPL, version 1.3, is included
+%% in the base LaTeX documentation of all distributions of LaTeX released
+%% 2003/12/01 or later.
+%% Retain all contribution notices and credits.
+%% ** Modified files should be clearly indicated as such, including  **
+%% ** renaming them and changing author support contact information. **
+%%*************************************************************************
+
+
+% *** Authors should verify (and, if needed, correct) their LaTeX system  ***
+% *** with the testflow diagnostic prior to trusting their LaTeX platform ***
+% *** with production work. The IEEE's font choices and paper sizes can   ***
+% *** trigger bugs that do not appear when using other class files.       ***                          ***
+% The testflow support page is at:
+% http://www.michaelshell.org/tex/testflow/
+
+
+
+\documentclass[conference]{IEEEtran}
+% Some Computer Society conferences also require the compsoc mode option,
+% but others use the standard conference format.
+%
+% If IEEEtran.cls has not been installed into the LaTeX system files,
+% manually specify the path to it like:
+% \documentclass[conference]{../sty/IEEEtran}
+
+
+
+
+
+% Some very useful LaTeX packages include:
+% (uncomment the ones you want to load)
+
+
+% *** MISC UTILITY PACKAGES ***
+%
+%\usepackage{ifpdf}
+% Heiko Oberdiek's ifpdf.sty is very useful if you need conditional
+% compilation based on whether the output is pdf or dvi.
+% usage:
+% \ifpdf
+%   % pdf code
+% \else
+%   % dvi code
+% \fi
+% The latest version of ifpdf.sty can be obtained from:
+% http://www.ctan.org/pkg/ifpdf
+% Also, note that IEEEtran.cls V1.7 and later provides a builtin
+% \ifCLASSINFOpdf conditional that works the same way.
+% When switching from latex to pdflatex and vice-versa, the compiler may
+% have to be run twice to clear warning/error messages.
+
+
+
+
+
+
+% *** CITATION PACKAGES ***
+%
+%\usepackage{cite}
+% cite.sty was written by Donald Arseneau
+% V1.6 and later of IEEEtran pre-defines the format of the cite.sty package
+% \cite{} output to follow that of the IEEE. Loading the cite package will
+% result in citation numbers being automatically sorted and properly
+% "compressed/ranged". e.g., [1], [9], [2], [7], [5], [6] without using
+% cite.sty will become [1], [2], [5]--[7], [9] using cite.sty. cite.sty's
+% \cite will automatically add leading space, if needed. Use cite.sty's
+% noadjust option (cite.sty V3.8 and later) if you want to turn this off
+% such as if a citation ever needs to be enclosed in parenthesis.
+% cite.sty is already installed on most LaTeX systems. Be sure and use
+% version 5.0 (2009-03-20) and later if using hyperref.sty.
+% The latest version can be obtained at:
+% http://www.ctan.org/pkg/cite
+% The documentation is contained in the cite.sty file itself.
+
+
+
+
+
+
+% *** GRAPHICS RELATED PACKAGES ***
+%
+\ifCLASSINFOpdf
+  % \usepackage[pdftex]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../pdf/}{../jpeg/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.pdf,.jpeg,.png}
+\else
+  % or other class option (dvipsone, dvipdf, if not using dvips). graphicx
+  % will default to the driver specified in the system graphics.cfg if no
+  % driver is specified.
+  % \usepackage[dvips]{graphicx}
+  % declare the path(s) where your graphic files are
+  % \graphicspath{{../eps/}}
+  % and their extensions so you won't have to specify these with
+  % every instance of \includegraphics
+  % \DeclareGraphicsExtensions{.eps}
+\fi
+% graphicx was written by David Carlisle and Sebastian Rahtz. It is
+% required if you want graphics, photos, etc. graphicx.sty is already
+% installed on most LaTeX systems. The latest version and documentation
+% can be obtained at: 
+% http://www.ctan.org/pkg/graphicx
+% Another good source of documentation is "Using Imported Graphics in
+% LaTeX2e" by Keith Reckdahl which can be found at:
+% http://www.ctan.org/pkg/epslatex
+%
+% latex, and pdflatex in dvi mode, support graphics in encapsulated
+% postscript (.eps) format. pdflatex in pdf mode supports graphics
+% in .pdf, .jpeg, .png and .mps (metapost) formats. Users should ensure
+% that all non-photo figures use a vector format (.eps, .pdf, .mps) and
+% not a bitmapped formats (.jpeg, .png). The IEEE frowns on bitmapped formats
+% which can result in "jaggedy"/blurry rendering of lines and letters as
+% well as large increases in file sizes.
+%
+% You can find documentation about the pdfTeX application at:
+% http://www.tug.org/applications/pdftex
+
+
+
+
+
+% *** MATH PACKAGES ***
+%
+%\usepackage{amsmath}
+% A popular package from the American Mathematical Society that provides
+% many useful and powerful commands for dealing with mathematics.
+%
+% Note that the amsmath package sets \interdisplaylinepenalty to 10000
+% thus preventing page breaks from occurring within multiline equations. Use:
+%\interdisplaylinepenalty=2500
+% after loading amsmath to restore such page breaks as IEEEtran.cls normally
+% does. amsmath.sty is already installed on most LaTeX systems. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/amsmath
+
+
+
+
+
+% *** SPECIALIZED LIST PACKAGES ***
+%
+%\usepackage{algorithmic}
+% algorithmic.sty was written by Peter Williams and Rogerio Brito.
+% This package provides an algorithmic environment fo describing algorithms.
+% You can use the algorithmic environment in-text or within a figure
+% environment to provide for a floating algorithm. Do NOT use the algorithm
+% floating environment provided by algorithm.sty (by the same authors) or
+% algorithm2e.sty (by Christophe Fiorio) as the IEEE does not use dedicated
+% algorithm float types and packages that provide these will not provide
+% correct IEEE style captions. The latest version and documentation of
+% algorithmic.sty can be obtained at:
+% http://www.ctan.org/pkg/algorithms
+% Also of interest may be the (relatively newer and more customizable)
+% algorithmicx.sty package by Szasz Janos:
+% http://www.ctan.org/pkg/algorithmicx
+
+
+
+
+% *** ALIGNMENT PACKAGES ***
+%
+%\usepackage{array}
+% Frank Mittelbach's and David Carlisle's array.sty patches and improves
+% the standard LaTeX2e array and tabular environments to provide better
+% appearance and additional user controls. As the default LaTeX2e table
+% generation code is lacking to the point of almost being broken with
+% respect to the quality of the end results, all users are strongly
+% advised to use an enhanced (at the very least that provided by array.sty)
+% set of table tools. array.sty is already installed on most systems. The
+% latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/array
+
+
+% IEEEtran contains the IEEEeqnarray family of commands that can be used to
+% generate multiline equations as well as matrices, tables, etc., of high
+% quality.
+
+
+
+
+% *** SUBFIGURE PACKAGES ***
+%\ifCLASSOPTIONcompsoc
+%  \usepackage[caption=false,font=normalsize,labelfont=sf,textfont=sf]{subfig}
+%\else
+%  \usepackage[caption=false,font=footnotesize]{subfig}
+%\fi
+% subfig.sty, written by Steven Douglas Cochran, is the modern replacement
+% for subfigure.sty, the latter of which is no longer maintained and is
+% incompatible with some LaTeX packages including fixltx2e. However,
+% subfig.sty requires and automatically loads Axel Sommerfeldt's caption.sty
+% which will override IEEEtran.cls' handling of captions and this will result
+% in non-IEEE style figure/table captions. To prevent this problem, be sure
+% and invoke subfig.sty's "caption=false" package option (available since
+% subfig.sty version 1.3, 2005/06/28) as this is will preserve IEEEtran.cls
+% handling of captions.
+% Note that the Computer Society format requires a larger sans serif font
+% than the serif footnote size font used in traditional IEEE formatting
+% and thus the need to invoke different subfig.sty package options depending
+% on whether compsoc mode has been enabled.
+%
+% The latest version and documentation of subfig.sty can be obtained at:
+% http://www.ctan.org/pkg/subfig
+
+
+
+
+% *** FLOAT PACKAGES ***
+%
+%\usepackage{fixltx2e}
+% fixltx2e, the successor to the earlier fix2col.sty, was written by
+% Frank Mittelbach and David Carlisle. This package corrects a few problems
+% in the LaTeX2e kernel, the most notable of which is that in current
+% LaTeX2e releases, the ordering of single and double column floats is not
+% guaranteed to be preserved. Thus, an unpatched LaTeX2e can allow a
+% single column figure to be placed prior to an earlier double column
+% figure.
+% Be aware that LaTeX2e kernels dated 2015 and later have fixltx2e.sty's
+% corrections already built into the system in which case a warning will
+% be issued if an attempt is made to load fixltx2e.sty as it is no longer
+% needed.
+% The latest version and documentation can be found at:
+% http://www.ctan.org/pkg/fixltx2e
+
+
+%\usepackage{stfloats}
+% stfloats.sty was written by Sigitas Tolusis. This package gives LaTeX2e
+% the ability to do double column floats at the bottom of the page as well
+% as the top. (e.g., "\begin{figure*}[!b]" is not normally possible in
+% LaTeX2e). It also provides a command:
+%\fnbelowfloat
+% to enable the placement of footnotes below bottom floats (the standard
+% LaTeX2e kernel puts them above bottom floats). This is an invasive package
+% which rewrites many portions of the LaTeX2e float routines. It may not work
+% with other packages that modify the LaTeX2e float routines. The latest
+% version and documentation can be obtained at:
+% http://www.ctan.org/pkg/stfloats
+% Do not use the stfloats baselinefloat ability as the IEEE does not allow
+% \baselineskip to stretch. Authors submitting work to the IEEE should note
+% that the IEEE rarely uses double column equations and that authors should try
+% to avoid such use. Do not be tempted to use the cuted.sty or midfloat.sty
+% packages (also by Sigitas Tolusis) as the IEEE does not format its papers in
+% such ways.
+% Do not attempt to use stfloats with fixltx2e as they are incompatible.
+% Instead, use Morten Hogholm'a dblfloatfix which combines the features
+% of both fixltx2e and stfloats:
+%
+% \usepackage{dblfloatfix}
+% The latest version can be found at:
+% http://www.ctan.org/pkg/dblfloatfix
+
+
+
+
+% *** PDF, URL AND HYPERLINK PACKAGES ***
+%
+%\usepackage{url}
+% url.sty was written by Donald Arseneau. It provides better support for
+% handling and breaking URLs. url.sty is already installed on most LaTeX
+% systems. The latest version and documentation can be obtained at:
+% http://www.ctan.org/pkg/url
+% Basically, \url{my_url_here}.
+
+
+
+
+% *** Do not adjust lengths that control margins, column widths, etc. ***
+% *** Do not use packages that alter fonts (such as pslatex).         ***
+% There should be no need to do such things with IEEEtran.cls V1.6 and later.
+% (Unless specifically asked to do so by the journal or conference you plan
+% to submit to, of course. )
+
+
+% correct bad hyphenation here
+\hyphenation{op-tical net-works semi-conduc-tor}
+
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+
+\begin{document}
+%
+% paper title
+% Titles are generally capitalized except for words such as a, an, and, as,
+% at, but, by, for, in, nor, of, on, or, the, to and up, which are usually
+% not capitalized unless they are the first or last word of the title.
+% Linebreaks \\ can be used within to get better formatting as desired.
+% Do not put math or special symbols in the title.
+\title{Comparing the Performance of Depth First Search and Breadth First Search for a Robot with Energy Constraints Exploring an Unknown Environment}
+
+
+% author names and affiliations
+% use a multiple column layout for up to three different
+% affiliations
+\author{\IEEEauthorblockN{Shyam Rajendren}
+\IEEEauthorblockA{School of Computing\\
+University of North Florida\\
+Jacksonville, Florida\\
+Email: n01185608@unf.edu}}
+
+% conference papers do not typically use \thanks and this command
+% is locked out in conference mode. If really needed, such as for
+% the acknowledgment of grants, issue a \IEEEoverridecommandlockouts
+% after \documentclass
+
+% for over three affiliations, or if they all won't fit within the width
+% of the page, use this alternative format:
+% 
+%\author{\IEEEauthorblockN{Michael Shell\IEEEauthorrefmark{1},
+%Homer Simpson\IEEEauthorrefmark{2},
+%James Kirk\IEEEauthorrefmark{3}, 
+%Montgomery Scott\IEEEauthorrefmark{3} and
+%Eldon Tyrell\IEEEauthorrefmark{4}}
+%\IEEEauthorblockA{\IEEEauthorrefmark{1}School of Electrical and Computer Engineering\\
+%Georgia Institute of Technology,
+%Atlanta, Georgia 30332--0250\\ Email: see http://www.michaelshell.org/contact.html}
+%\IEEEauthorblockA{\IEEEauthorrefmark{2}Twentieth Century Fox, Springfield, USA\\
+%Email: homer@thesimpsons.com}
+%\IEEEauthorblockA{\IEEEauthorrefmark{3}Starfleet Academy, San Francisco, California 96678-2391\\
+%Telephone: (800) 555--1212, Fax: (888) 555--1212}
+%\IEEEauthorblockA{\IEEEauthorrefmark{4}Tyrell Inc., 123 Replicant Street, Los Angeles, California 90210--4321}}
+
+
+
+
+% use for special paper notices
+%\IEEEspecialpapernotice{(Invited Paper)}
+
+
+
+
+% make the title area
+\maketitle
+
+% As a general rule, do not put math, special symbols or citations
+% in the abstract
+\begin{abstract}
+This paper identifies four performance metrics in which to compare algorithms that are used to search an unknown environment when a robot has an energy constraint. These metrics are: energy consumed, the number of trips taken by the robot, the time taken to explore the environment, and the number of points in the environment left unexplored. The two algorithms focused on in this paper are Depth First Search (DFS) and Breadth First Search (BFS). This paper hopes to contribute a standardised evaluation metric to compare algorithms so that most optimal ones can be used in real-life situations.
+\end{abstract}
+
+% no keywords
+
+
+
+
+% For peer review papers, you can put extra information on the cover
+% page as needed:
+% \ifCLASSOPTIONpeerreview
+% \begin{center} \bfseries EDICS Category: 3-BBND \end{center}
+% \fi
+%
+% For peerreview papers, this IEEEtran command inserts a page break and
+% creates the second title. It will be ignored for other modes.
+\IEEEpeerreviewmaketitle
+
+
+
+\section{Introduction}
+In many scenarios we must rely on robots to explore environments which humans cannot. A couple of examples would be deep ocean floor mapping and terrestrial object explorations (such as Mars). Robots are also helpful in solving problems closer to home such as searching for missing persons in disaster zones. However, considering the expenses necessary to carry out such operations, we must make sure that the robots search their environments in the most efficient and cost effective manner possible.
+
+\
+There are many algorithms that can be used to help a robot traverse an unknown environment but when selecting an algorithm for a robot to use in big operations we would like to pick the one which performs the best. In order to do this there must be a standard evaluation metric which we should use to compare the performance between different algorithms. This paper hopes to do just that by comparing Depth First Search (DFS) and Breadth First Search (BFS) using standard performance metrics.
+
+\
+Comparing and creating new algorithms to search an unknown environment is not new but hardly has it been done with a robot's energy capacity kept in mind. However, in a real world environment, a robot would not have an infinite energy supply so it is prudent for us to consider this constraint when comparing algorithms.There have been a few studies where researchers evaluate the performance of their algorithms when a robot is given this energy constraint, but their performance metrics vary which makes it difficult to asses which algorithm actually performs better.
+
+\
+In this paper we will discuss previous work done by fellow researchers in the field as well as discuss our own work. We will then outline the methodology we used as well as the evaluation metric used to compare the two algorithms. Finally, we will discuss our results as well as any future work.
+
+\section{Previous Work}
+While few in number there has been research done by other scholars in this topic. For instance, Strimel and Veloso used a boustrophedon decomposition to cover an unknown environment [2]. In this method, the robot returns to the charging station when its energy level is too low to continue the coverage. Mishra \textit{et al.} designed a coverage planning algorithm which uses multiple robots to traverse the unknown environment [7]. This method involves splitting the robots into two groups, workers and helpers. When a worker needs to recharge its battery, an associated helper will continue the worker’s coverage. Though these studies added useful information to the topic, neither of them formally analyzed their algorithms and instead only looked to prove that their methods correctly covered every point in the environment. Through this paper, we have set a precedent of comparing algorithms based on the same parameters. This will help decide which algorithms are superior so that they can be used practically.
+
+\section{Methodology}
+We will be using a novel method in order to compare the DFS and BFS algorithms. The goal of this project is for a robot to traverse every point in an unknown environment while having to return to a charging station (which will be placed at the robot's starting point) whenever its battery runs low. Thus the starting point and end point will be the same as the robot must return to its charging station once its traversal is complete. The input for this project is a grid environment with a random distribution of obstacles which will be traversed using DFS and BFS. The grid environment here is simply a graph with nodes and edges that resembles a square grid. 
+
+\
+Depth First Search (DFS) is an algorithm for traversing or searching tree or graph data structures [1]. The algorithm starts at the root of the tree and traverses as far as possible down the tree's branch before backtracking. The time complexity for this algorithm is O(b\textsuperscript{d}) where \textit{b} is the branching factor, in this case two, and \textit{d} is the depth of the tree [4]. Breath First Search (BFS) is similar to DFS except it traverses all the nodes at the present depth of the tree before going to the next depth level [5]. The time complexity for this algorithm is also O(b\textsuperscript{d}) [6]. The environment can be traversed in all four cardinal directions and each node in the grid has a maximum of two parents and two children. The output here will be the path/paths taken by the robot to traverse the entire unknown environment.
+
+\
+Due to how the DFS and BFS algorithms work, some points will be missed and this will increase with the number of obstacles present in the environment.In order to effectively search an unknown environment, the robot must start at or close to the center of the environment. The energy of the robot is equivalent to the path length. For example, if the robot moves from (0,0) to (0,1) (an euclidean distance of 1), the robot's energy will decrease by 1. As such the energy constraint placed on the robot must be greater then twice the length/width of the grid environment. That way the robot can reach the extremes of the environment (the maximum depth in case of DFS and maximum breadth in case of BFS). In our simulations, we kept the energy constraint equivalent to three times the length/width of the environment. For example, in a 10x10 grid environment, the energy constraint = 10 x 3 = 30.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=9cm]{pic1}
+    \caption{Labelled example of an output using Depth First Search in a 10x10 Environment}
+    \label{fig:pic1}
+\end{figure}
+
+\
+Both DFS and BFS require a normal tree's depth and breadth in order to function. However, in a grid environment such as ours, there is both a positive and negative depth (y-axis) and breadth (x-axis). Therefore, in order for DFS and BFS to explore the entire environment, we must split the environment into 4 quadrants and perform DFS and BFS separately on each one of them. We use the x-axis and y-axis of our grid as a makeshift depth and breadth in order to implement the DFS and BFS algorithms. The main axes in this environment will be centered on the charging station/start point of the robot. For example, if the robot starts at (5,5), then the main axes would be x=5 and y=5. As the effectiveness of DFS and BFS in our simulated environment revolves around the main axes in the environment, any obstacles present on one of these axes will severely hurt the performance. As such in the environment we create, we will ensure that there are no obstacles present on the main axes of the environment. This is obviously extremely unlikely in a real-world scenario but we can do this in our case as we are not trying to prove the proficiency of BFS and DFS but rather we are trying to compare the two algorithms.
+
+\section{Evaluation}
+A simulation approach will be used to solve this problem. Three environments were created: a 10x10 environment, a 50x50 environment, and a 100x100 environment. Each environment had a random obstacle distribution where the obstacle percentage can be either 10\%, 20\%, or 30\%. The environments were created using Graph Stream, an open source Java graph handling package available online [3]. 
+
+\
+The data sets we will collect are time taken to search the environment, number of trips, energy consumed (equivalent to the sum of all the path lengths), and the percentage of points unexplored. The time taken is calculated from when the robot first starts exploring to when the robot has explored all possible points within the limits of the algorithm. The time taken is not controlled as there may be other processes running in the background, however these same processes should be running when both the algorithms are being tested so any variations caused by background processes should effect both algorithms equally. A 'trip' is defined as the path taken by a robot from the charging station and back. The unexplored points refer only to the points missed by the robot that are vertices on the grid, i.e. (1,1), (2,2), etc. The robot is not capable of exploring points that are not grid vertices. All this data will help serve as simple evaluation metrics to compare the two searching algorithms.
+
+\section{Results}
+The following three tables show the data that was collected. Note the values shown are the average of 5 separate test runs. This was done in order to get more accurate results. Energy consumed and total number of trips have been rounded to the nearest integer. The yellow highlight indicates the better result for a particular metric. The blue highlight indicates a tie in the two results.
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=9cm]{pic2}
+    \caption{Results obtained from the 10x10 Environment}
+    \label{fig:pic2}
+\end{figure}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=9cm]{pic3}
+    \caption{Results obtained from the 50x50 Environment}
+    \label{fig:pic3}
+\end{figure}
+
+\begin{figure}[htp]
+    \centering
+    \includegraphics[width=9cm]{pic4}
+    \caption{Results obtained from the 100x100 Environment}
+    \label{fig:pic4}
+\end{figure}
+
+% An example of a floating figure using the graphicx package.
+% Note that \label must occur AFTER (or within) \caption.
+% For figures, \caption should occur after the \includegraphics.
+% Note that IEEEtran v1.7 and later has special internal code that
+% is designed to preserve the operation of \label within \caption
+% even when the captionsoff option is in effect. However, because
+% of issues like this, it may be the safest practice to put all your
+% \label just after \caption rather than within \caption{}.
+%
+% Reminder: the "draftcls" or "draftclsnofoot", not "draft", class
+% option should be used if it is desired that the figures are to be
+% displayed while in draft mode.
+%
+%\begin{figure}[!t]
+%\centering
+%\includegraphics[width=2.5in]{myfigure}
+% where an .eps filename suffix will be assumed under latex, 
+% and a .pdf suffix will be assumed for pdflatex; or what has been declared
+% via \DeclareGraphicsExtensions.
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure}
+
+% Note that the IEEE typically puts floats only at the top, even when this
+% results in a large percentage of a column being occupied by floats.
+
+
+% An example of a double column floating figure using two subfigures.
+% (The subfig.sty package must be loaded for this to work.)
+% The subfigure \label commands are set within each subfloat command,
+% and the \label for the overall figure must come after \caption.
+% \hfil is used as a separator to get equal spacing.
+% Watch out that the combined width of all the subfigures on a 
+% line do not exceed the text width or a line break will occur.
+%
+%\begin{figure*}[!t]
+%\centering
+%\subfloat[Case I]{\includegraphics[width=2.5in]{box}%
+%\label{fig_first_case}}
+%\hfil
+%\subfloat[Case II]{\includegraphics[width=2.5in]{box}%
+%\label{fig_second_case}}
+%\caption{Simulation results for the network.}
+%\label{fig_sim}
+%\end{figure*}
+%
+% Note that often IEEE papers with subfigures do not employ subfigure
+% captions (using the optional argument to \subfloat[]), but instead will
+% reference/describe all of them (a), (b), etc., within the main caption.
+% Be aware that for subfig.sty to generate the (a), (b), etc., subfigure
+% labels, the optional argument to \subfloat must be present. If a
+% subcaption is not desired, just leave its contents blank,
+% e.g., \subfloat[].
+
+
+% An example of a floating table. Note that, for IEEE style tables, the
+% \caption command should come BEFORE the table and, given that table
+% captions serve much like titles, are usually capitalized except for words
+% such as a, an, and, as, at, but, by, for, in, nor, of, on, or, the, to
+% and up, which are usually not capitalized unless they are the first or
+% last word of the caption. Table text will default to \footnotesize as
+% the IEEE normally uses this smaller font for tables.
+% The \label must come after \caption as always.
+%
+%\begin{table}[!t]
+%% increase table row spacing, adjust to taste
+%\renewcommand{\arraystretch}{1.3}
+% if using array.sty, it might be a good idea to tweak the value of
+% \extrarowheight as needed to properly center the text within the cells
+%\caption{An Example of a Table}
+%\label{table_example}
+%\centering
+%% Some packages, such as MDW tools, offer better commands for making tables
+%% than the plain LaTeX2e tabular which is used here.
+%\begin{tabular}{|c||c|}
+%\hline
+%One & Two\\
+%\hline
+%Three & Four\\
+%\hline
+%\end{tabular}
+%\end{table}
+
+
+% Note that the IEEE does not put floats in the very first column
+% - or typically anywhere on the first page for that matter. Also,
+% in-text middle ("here") positioning is typically not used, but it
+% is allowed and encouraged for Computer Society conferences (but
+% not Computer Society journals). Most IEEE journals/conferences use
+% top floats exclusively. 
+% Note that, LaTeX2e, unlike IEEE journals/conferences, places
+% footnotes above bottom floats. This can be corrected via the
+% \fnbelowfloat command of the stfloats package.
+
+\newpage
+\section{Conclusion}
+From our results, we can see that DFS and BFS essentially perform the same when trying to traverse an unknown environment. In fact, in almost all the test runs we find that both algorithms miss the exact same points. Though there are scenarios in which one performs marginally better than the other, it is inconsistent and any variations in results is probably due to the particular environment that was produced and no inherent superiority in either algorithm. In fact, it is very likely if that a far greater number of tests were run, we would find that any differences in the results in each performance metric would all but vanish.
+
+\
+These results are not surprising though in fact this is actually what one would expect. The DFS and BFS search algorithms are meant to search a tree/graph and how well they perform relies almost solely on where the data in question has been placed in the tree/graph. However, in our case, we require the algorithms to search every single point in the environment which would be equivalent to the worst-case scenario for both algorithms. The worst-case scenario for DBS and BFS are the same as they both have to search every point.
+
+\
+In conclusion, we can say that DFS and BFS are not suitable for exploring an unknown environment as is made quite clear by the percentage of unexplored points in every scenario that was tested. We can also say that both algorithms perform almost equally and any difference in performance results is due to where the obstacles are present in the environment.
+
+\section{Future Work}
+We wish to improve this study by running two-sample t-tests to compare our four evaluation metrics (time taken, energy consumed, number of trips, and percentage of points unexplored). In order for the t-test to be applicable, we would first need to show our results are normally distributed over each metric. We can do this simply by producing a histogram and checking to see if a bell-curve pattern is produced.
+
+\
+In the future we would like to test these algorithms in a real-world environment so that we may get a better gauge of an algorithm's proficiency. We would also like to compare more search algorithms using the standardised performance metrics which were devised in this paper.
+
+% conference papers do not normally have an appendix
+
+
+
+% trigger a \newpage just before the given reference
+% number - used to balance the columns on the last page
+% adjust value as needed - may need to be readjusted if
+% the document is modified later
+%\IEEEtriggeratref{8}
+% The "triggered" command can be changed if desired:
+%\IEEEtriggercmd{\enlargethispage{-5in}}
+
+% references section
+
+% can use a bibliography generated by BibTeX as a .bbl file
+% BibTeX documentation can be easily obtained at:
+% http://mirror.ctan.org/biblio/bibtex/contrib/doc/
+% The IEEEtran BibTeX style support page is at:
+% http://www.michaelshell.org/tex/ieeetran/bibtex/
+%\bibliographystyle{IEEEtran}
+% argument is your BibTeX string definitions and bibliography database(s)
+%\bibliography{IEEEabrv,../bib/paper}
+%
+% <OR> manually copy in the resultant .bbl file
+% set second argument of \begin to the number of references
+% (used to reserve space for the reference number labels box)
+\begin{thebibliography}{1}
+
+\bibitem{six}
+Charles Pierre Trémaux (1859–1882) École polytechnique of Paris (X:1876), French engineer of the telegraph
+in Public conference, December 2, 2010 – by professor Jean Pelletier-Thibert in Académie de Macon (Burgundy – France)
+
+\bibitem{one}
+Grant P. Strimel and Manuela M. Veloso. 2014. Coverage planning with finite
+resources. \textit{2014 IEEE/RSJ International Conference on Intelligent Robots and Systems}
+(2014), 2950–2956
+
+\bibitem{three}
+GraphStream - A Dynamic Graph Library.[online] Available at: https://graphstream-project.org/
+
+\bibitem{seven}
+Judea Pearl, Heuristics--Intelligent Search Strategies for Computer Problem Solving,Addison-Wesley, Reading, Massachusetts (1984)
+
+\bibitem{four}
+K. Zuse: Der Plankalkül Archived 12 May 2015 at the Wayback Machine. PhD thesis, 1945. Last accessed from:
+https://web.archive.org/web/20150512112136/http://herbscorner.lepete.de/ upload/plankalkuel on 11/30/2020.
+
+\bibitem{five}
+Moore, Edward F. (1959). "The shortest path through a maze". Proceedings of the International Symposium on the Theory of Switching. Harvard University Press. pp. 285–292
+ 
+\bibitem{two}
+Saurabh Mishra, Samuel Rodríguez, Marco Morales, and Nancy M. Amato. 2016. Battery-constrained coverage. In \textit{CASE}. IEEE, 695–700.
+
+\end{thebibliography}
+
+
+
+
+% that's all folks
+\end{document}
+
+
